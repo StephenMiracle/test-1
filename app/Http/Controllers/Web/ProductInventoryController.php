@@ -55,7 +55,7 @@ class ProductInventoryController extends Controller
     {
         $product = Product::where([
             "id" => $id,
-            "user_id" => Auth::id()
+            "admin_id" => Auth::id()
         ])->with("inventory")->first();
 
         if (!$product) {
