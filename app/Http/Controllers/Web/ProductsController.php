@@ -21,7 +21,7 @@ class ProductsController extends Controller
             "style", 
             "id", 
             "brand"
-            )->where('user_id', Auth::id())
+            )->where('admin_id', Auth::id())
             ->with(["inventory" => function ($query) {
                 return $query->select(["product_id", "sku"]);
             }])->get();

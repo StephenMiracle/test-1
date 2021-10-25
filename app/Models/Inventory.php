@@ -16,7 +16,7 @@ class Inventory extends Model
     {
         //Product Name, sku, quantity, color, size, price and cost
         return DB::select(
-            DB::raw("select p.product_name, p.id, i.sku, i.quantity, i.color, i.size, i.price_cents, i.cost_cents from inventory i inner join products p on i.product_id = p.id where p.user_id = :user"),
+            DB::raw("select p.product_name, p.id, i.sku, i.quantity, i.color, i.size, i.price_cents, i.cost_cents from inventory i inner join products p on i.product_id = p.id where p.admin_id = :user"),
             [
                 "user" => $userID
             ]

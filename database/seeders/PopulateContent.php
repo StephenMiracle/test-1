@@ -39,9 +39,7 @@ class PopulateContent extends Seeder
                         }
                     }
                 } else {
-                    $coldata = [
-                        "user_id" => rand(23, 25)
-                    ];
+                    $coldata = [];
     
                     foreach($headersRow as $col => $loc) {
                         $coldata[$col] = $data[$loc];
